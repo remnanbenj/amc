@@ -1,12 +1,56 @@
+:root {
+  --blue: #314360;
+  --green: #79B43C;
+}
+
 body {
   padding: 0px;
   margin: 0px;
   font-family: "Arial";
 }
 
-.title {
+.titlebar {
+    position: relative;
     text-align: center;
-    margin-top: 30px;
-    font-size: 24px;
-    font-weight: bold;
 }
+
+.logo {
+    width: 240px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+.titlephone {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: var(--blue);
+    font-size: 20px;
+}
+
+.navbar {
+    text-align: center;
+    background: var(--blue);
+}
+
+.navbutton {
+    display: inline-block;
+    padding: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: var(--blue);
+    margin: 5px;
+    cursor: pointer;
+    color: white;
+    
+    font-size: 18px;
+    font-weight: bold;
+    
+    transition: transform .2s;
+}
+
+.navbutton:hover {
+    transform: translate(0px,-3px);
+}
+
+
