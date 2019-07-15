@@ -1,27 +1,26 @@
 extends layout
 
 block content
-    
-    .logobar
-        img.logo(src="images/logo_whitebg.jpg")
         
-        .logobar-company
-            span Advanced Motor Control Ltd
-            span.logobar-dot .
-            
-        .logobar-phone
-            .glyphicon.glyphicon-earphone(style="font-size: 17px;") 
-            a(href="tel:0508-000052" style="color:var(--blue);") &nbsp; 0508 000052
-            
-        a.logobar-linkedin(href="https://www.linkedin.com/company/advanced-motorcontrol-ltd/about/" target="_blank" style="color:var(--blue);")
-            img.linkedin-image(src="/images/linkedin.png")
-            span &nbsp; linkedin
+    .featured-container
+        .featured-image(style="background-image: url('/images/our-people.jpg');")
+            .featured-image-info 
+                .featured-image-info-title Our People
+                .featured-image-info-desc Advanced Motor Control is made up of a group of customer focused, technically competent, sales and support engineers who are well trained in all our products.
+                .featured-image-info-button Read More
+        
+    .featured-container(style="height: 330px;")
     
-    .navbar
-        .navbutton Home
-        .navbutton Products
-        .navbutton Seminars
-        .navbutton Tech Links
-        .navbutton AMC Calculator
-        .navbutton About Us
-        .navbutton Contact Us
+        .featured-container-half
+            .featured-image(style="background-image: url('/images/amc-seminar.jpg');")
+                .featured-image-info-half 
+                    .featured-image-info-title-half AMC Seminars
+                    .featured-image-info-desc-half AMC presents training seminars and workshops on a variety of topics related to motor control and automation.
+                    .featured-image-info-button-half Read More
+                    
+        .featured-container-half(style="left: auto; right: 0px;")
+            .featured-image(style="background-image: url('/images/calculator.jpg');")
+                .featured-image-info-half 
+                    .featured-image-info-title-half AMC Calculator
+                    .featured-image-info-desc-half AMC Calculator is a software tool that is designed to help select the best matched product for any application.
+                    .featured-image-info-button-half Read More
