@@ -9,28 +9,98 @@ body {
   font-family: "Arial";
 }
 
-.titlebar {
+/* unvisited link */
+a:link {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+/* selected link */
+a:active {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+
+/* LOGOBAR */
+
+.logobar {
     position: relative;
-    text-align: center;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logobar-company {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    color: var(--blue);
+    
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logobar-dot {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--green);
+}
+
+.logobar-phone {
+    position: absolute;
+    top: 63px;
+    right: 4px;
+    color: var(--blue);
+    font-size: 20px;
+    transition: transform .2s;
+}
+
+.logobar-linkedin {
+    position: absolute;
+    bottom: 20px;
+    right: 4px;
+    color: var(--blue);
+    font-size: 20px;
+    transition: transform .2s;
+}
+
+.logobar-linkedin:hover, .logobar-phone:hover {
+    transform: translate(0px,-2px);
+}
+
+.linkedin-image {
+    display: inline-block;
+    width: 16px;
+    margin-bottom: 5px;
 }
 
 .logo {
     width: 240px;
     margin: 0 auto;
-    margin-top: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.titlephone {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: var(--blue);
-    font-size: 20px;
-}
+
+/* NAVBAR */
 
 .navbar {
     text-align: center;
     background: var(--blue);
+    border-radius: 0px;
 }
 
 .navbutton {
@@ -50,7 +120,10 @@ body {
 }
 
 .navbutton:hover {
-    transform: translate(0px,-3px);
+    transform: translate(0px,-2px);
 }
+
+
+/* . */
 
 

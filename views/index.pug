@@ -2,11 +2,20 @@ extends layout
 
 block content
     
-    .titlebar
+    .logobar
         img.logo(src="images/logo_whitebg.jpg")
-        .titlephone
+        
+        .logobar-company
+            span Advanced Motor Control Ltd
+            span.logobar-dot .
+            
+        .logobar-phone
             .glyphicon.glyphicon-earphone(style="font-size: 17px;") 
             a(href="tel:0508-000052" style="color:var(--blue);") &nbsp; 0508 000052
+            
+        a.logobar-linkedin(href="https://www.linkedin.com/company/advanced-motorcontrol-ltd/about/" target="_blank" style="color:var(--blue);")
+            img.linkedin-image(src="/images/linkedin.png")
+            span &nbsp; linkedin
     
     .navbar
         .navbutton Home
@@ -14,5 +23,5 @@ block content
         .navbutton Seminars
         .navbutton Tech Links
         .navbutton AMC Calculator
-        .navbutton Our People
+        .navbutton About Us
         .navbutton Contact Us
