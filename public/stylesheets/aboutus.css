@@ -1,0 +1,38 @@
+
+.aboutus-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--blue);
+    margin-top: 30px;
+}
+
+.aboutus-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 20px;
+    overflow: auto;
+}
+
+.aboutus-col-left {
+    float: left;
+    width: 45%;
+}
+
+.aboutus-image {
+    padding-top: 56.25%;
+    background-image: url("/images/home.jpg");
+    background-size: cover;
+    background-position: center;
+    box-shadow: 2px 2px 5px #888;
+}
+
+.aboutus-col-right {
+    float: left;
+    width: 55%;
+    padding: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    
+    font-size: 16px;
+}

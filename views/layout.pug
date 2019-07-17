@@ -1,9 +1,12 @@
 doctype html
 html
+
   head
+  
     title= "Advanced Motor Control Ltd."
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    
   body
     
     .logobar
@@ -22,19 +25,26 @@ html
             span &nbsp; linkedin
     
     .navbar
-        .navbutton Home
+        a.navbutton(id="/" href="/") Home
         .navbutton 
             span Products &nbsp;
             .glyphicon.glyphicon-triangle-bottom(style="font-size: 12px;")
         .navbutton Seminars
         .navbutton Technical Links
         .navbutton AMC Calculator
-        .navbutton 
+        a.navbutton(id="/aboutus" href="/aboutus") 
             span About Us &nbsp;
             .glyphicon.glyphicon-triangle-bottom(style="font-size: 12px;")
         .navbutton Contact Us
         
-    block content
+    script.
+        if(window.location.pathname == "/ourpeople" || window.location.pathname == "/ourhistory")
+            document.getElementById("/aboutus").className = document.getElementById("/aboutus").className + " selected"
+        else
+            document.getElementById(window.location.pathname).className = document.getElementById(window.location.pathname).className + " selected"
+        
+    .content
+        block content
     
     .footer
         span.no-bs Your 
@@ -46,7 +56,7 @@ html
         br
         span.terms Terms and Conditions
         span &nbsp;|&nbsp;
-        span.privacy Privacy
+        span.privacy Privacy Policy
         br
         span.copyright © 2019 Advanced Motor Control Ltd.
         
