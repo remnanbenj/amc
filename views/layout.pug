@@ -6,6 +6,7 @@ html
     title= "Advanced Motor Control Ltd."
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
     
   body
     
@@ -26,27 +27,47 @@ html
     
     .navbar
         a.navbutton(id="/" href="/") Home
-        .navbutton 
-            span Products &nbsp;
-            .glyphicon.glyphicon-triangle-bottom(style="font-size: 12px;")
+        .hasdropdown(id="products" style="display: inline-block; position: relative;")
+            a.navbutton(id="/products" href="/products") 
+                span Products &nbsp;
+                .glyphicon.glyphicon-triangle-bottom(style="font-size: 12px;")
         .navbutton Seminars
-        .navbutton Technical Links
+        .navbutton Education
         .navbutton AMC Calculator
-        a.navbutton(id="/aboutus" href="/aboutus") 
-            span About Us &nbsp;
-            .glyphicon.glyphicon-triangle-bottom(style="font-size: 12px;")
+        .hasdropdown(id="aboutus" style="display: inline-block; position: relative;")
+            a.navbutton(id="/aboutus" href="/aboutus") 
+                span About Us &nbsp;
+                .glyphicon.glyphicon-triangle-bottom(style="font-size: 12px;")
         .navbutton Contact Us
-        
+    
     script.
-        if(window.location.pathname == "/ourpeople" || window.location.pathname == "/ourhistory")
+    
+        if(window.location.pathname == "/ourpeople" || window.location.pathname == "/ourhistory") {
             document.getElementById("/aboutus").className = document.getElementById("/aboutus").className + " selected"
-        else
+            
+        } else {
             document.getElementById(window.location.pathname).className = document.getElementById(window.location.pathname).className + " selected"
+        }
         
     .content
         block content
-    
+        
     .footer
+        .navbar(style="background: none; margin-bottom: 5px;")
+            a.navbutton(id="/2" href="/") Home
+            .hasdropdown(id="products2" style="display: inline-block; position: relative;")
+                a.navbutton(id="/products2" href="/products") 
+                    span Products &nbsp;
+                    .glyphicon.glyphicon-triangle-top(style="font-size: 12px;")
+            .navbutton Seminars
+            .navbutton Education
+            .navbutton AMC Calculator
+            .hasdropdown(id="aboutus2" style="display: inline-block; position: relative;")
+                a.navbutton(id="/aboutus2" href="/aboutus") 
+                    span About Us &nbsp;
+                    .glyphicon.glyphicon-triangle-top(style="font-size: 12px;")
+            .navbutton Contact Us
+        
         span.no-bs Your 
         span.no-bs(style="color: var(--green); font-weight: 600;") NO B.S. 
         span.no-bs Motor Control Specialists.
@@ -59,6 +80,74 @@ html
         span.privacy Privacy Policy
         br
         span.copyright © 2019 Advanced Motor Control Ltd.
+    
+    script.
+    
+        if(window.location.pathname == "/ourpeople" || window.location.pathname == "/ourhistory") {
+            document.getElementById("/aboutus2").className = document.getElementById("/aboutus2").className + " selected"
+            
+        } else {
+            document.getElementById(window.location.pathname + "2").className = document.getElementById(window.location.pathname + "2").className + " selected"
+        }
+        
+    
+    .navbutton-dropdown(id="navbutton-dropdown")
+        a.navbutton-dropdown-button(href="/ourpeople") Our People
+        a.navbutton-dropdown-button(href="/ourhistory") Our History
+    
+    script.
+    
+        if(window.location.pathname == "/ourpeople" || window.location.pathname == "/ourhistory") {
+            document.getElementById("/aboutus").className = document.getElementById("/aboutus").className + " selected"
+            document.getElementById("/aboutus2").className = document.getElementById("/aboutus2").className + " selected"
+            
+        } else {
+            document.getElementById(window.location.pathname).className = document.getElementById(window.location.pathname).className + " selected"
+            document.getElementById(window.location.pathname + "2").className = document.getElementById(window.location.pathname + "2").className + " selected"
+        }
+            
+        
+        $('.hasdropdown').hover( function() {
+            $($(this)).append( $('#navbutton-dropdown') );
+            
+            if($(this).attr('id') == 'products' || $(this).attr('id') == 'products2') {
+                document.getElementById("navbutton-dropdown").innerHTML = 
+                    '<a href="/products" class="navbutton-dropdown-button">Variable Frequency Drives</a>' +
+                    '<a href="/products" class="navbutton-dropdown-button">Soft Starters</a>' +
+                    '<a href="/products" class="navbutton-dropdown-button">Horner PLCs</a>' +
+                    '<a href="/products" class="navbutton-dropdown-button">GSM Control</a>' +
+                    '<a href="/products" class="navbutton-dropdown-button">Logic Relays</a>' +
+                    '<a href="/products" class="navbutton-dropdown-button">Power Factor Corretion</a>' +
+                    '<a href="/products" class="navbutton-dropdown-button">Pressure Transducers</a>' +
+                    '<a href="/products" class="navbutton-dropdown-button">Harmonic Filters</a>';
+                document.getElementById("navbutton-dropdown").style.textAlign = 'left';
+            } else if($(this).attr('id') == 'aboutus' || $(this).attr('id') == 'aboutus2') {
+                document.getElementById("navbutton-dropdown").innerHTML = "";
+                if(window.location.pathname == "/ourpeople") document.getElementById("navbutton-dropdown").innerHTML += '<a href="/ourpeople" class="navbutton-dropdown-button" style="color: var(--green) !important;">Our People</a>';
+                else document.getElementById("navbutton-dropdown").innerHTML += '<a href="/ourpeople" class="navbutton-dropdown-button">Our People</a>';
+                if(window.location.pathname == "/ourhistory") document.getElementById("navbutton-dropdown").innerHTML += '<a href="/ourhistory" class="navbutton-dropdown-button" style="color: var(--green) !important;">Our History</a>';
+                else document.getElementById("navbutton-dropdown").innerHTML += '<a href="/ourhistory" class="navbutton-dropdown-button">Our History</a>';
+                document.getElementById("navbutton-dropdown").style.textAlign = 'center';
+            }
+            
+            if($(this).attr('id') == 'aboutus2' || $(this).attr('id') == 'products2') {
+                document.getElementById("navbutton-dropdown").style.top = 'auto';
+                document.getElementById("navbutton-dropdown").style.bottom = '100%';
+                document.getElementById("navbutton-dropdown").style.paddingBottom = '0px';
+                document.getElementById("navbutton-dropdown").style.paddingTop = '8px';
+            } else {
+                document.getElementById("navbutton-dropdown").style.top = '100%';
+                document.getElementById("navbutton-dropdown").style.bottom = 'auto';
+                document.getElementById("navbutton-dropdown").style.paddingBottom = '8px';
+                document.getElementById("navbutton-dropdown").style.paddingTop = '0px';
+            }
+            document.getElementById("navbutton-dropdown").style.display = "inline-block";
+            
+        }, function() {
+            document.getElementById("navbutton-dropdown").style.display = "none";
+        });
+        
+        
         
         
         

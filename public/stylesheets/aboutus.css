@@ -1,38 +1,37 @@
+.full {
+    margin: 0 auto;
+    margin-top: 50px;
+    max-width: 1200px;
+    overflow: auto;
+}
+
+.half {
+    float: left;
+    position: relative;
+    width: 50%;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+}
 
 .aboutus-title {
-    text-align: center;
-    font-size: 28px;
+    font-size: 34px;
     font-weight: bold;
-    color: var(--blue);
-    margin-top: 30px;
+    margin-bottom: 10px;
 }
 
 .aboutus-container {
     max-width: 1200px;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 10px;
     overflow: auto;
 }
 
-.aboutus-col-left {
-    float: left;
-    width: 45%;
-}
-
 .aboutus-image {
+    margin-top: 13px;
     padding-top: 56.25%;
     background-image: url("/images/home.jpg");
     background-size: cover;
     background-position: center;
     box-shadow: 2px 2px 5px #888;
-}
-
-.aboutus-col-right {
-    float: left;
-    width: 55%;
-    padding: 5px;
-    padding-left: 30px;
-    padding-right: 30px;
-    
-    font-size: 16px;
 }
