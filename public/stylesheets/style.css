@@ -201,5 +201,47 @@ a:active {
 }
 
 
+/* CONTENT */
+
+.full {
+    margin: 0 auto;
+    margin-top: 50px;
+    max-width: 1000px;
+    overflow: auto;
+}
+
+.half {
+    float: left;
+    position: relative;
+    width: 50%;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+}
+
+.main-image {
+    box-shadow: inset 0px -50px 50px rgba(0,0,0,0.7); 
+    padding-top: 20%; 
+    background-size: cover; 
+    background-position: 50% 20%; 
+}
+
+.main-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: white;
+    text-align: center;
+}
+
+.main-description {
+    margin-top: 5px;
+    font-size: 20px;
+    padding: 10px;
+    text-align: justify;
+}
+
+
+
 
  
